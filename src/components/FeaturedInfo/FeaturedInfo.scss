@@ -1,0 +1,31 @@
+.featuredInfo {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    .featuredInfoitem {
+        flex: 1;
+        margin: 0px 20px;
+        padding: 30px;
+        border-radius: 10px;
+        cursor: pointer;
+        -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+        .revenue {
+            margin:15px 0px;
+            font-size: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .type{
+            margin:15px 0px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .info{
+            margin:15px 0px;
+            font-size: 20px;
+            color: darkgray;
+        }
+    }
+}

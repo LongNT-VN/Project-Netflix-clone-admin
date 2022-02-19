@@ -1,0 +1,63 @@
+.list {
+    flex: 4;
+    .Create {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        width: 100px;
+        border-radius: 5px;
+        background-color: darkgreen;
+        color: white;
+        font-weight: bold;
+        padding: 5px 10px;
+        margin: 5px 20px;
+        float: right;
+    }
+    .listTable {
+        width: 100%;
+        .listTr {
+            margin: 10px;
+            display: flex;
+            flex-direction: row;
+            .listTH {
+                width: 200px;
+                margin-left: 80px;
+                display: flex;
+                align-items: center;
+            }
+            .listTH.listColumn {
+                width: 350px;
+            }
+            .listTd {
+                width: 200px;
+                margin-left: 80px;
+                display: flex;
+                align-items: center;
+                .listName {
+                    font-weight: bold;
+                }
+                .editButton {
+                    margin-right: 10px;
+                    border-radius: 5px;
+                    padding: 5px 20px;
+                    background-color: rgba(255, 160, 72, 0.5);
+                    cursor: pointer;
+                }
+                .icon {
+                    cursor: pointer;
+                }
+            }
+            .listTd.listName {
+                width: 350px;
+            }
+        }
+        .rowdata:hover {
+            background-color: whitesmoke;
+        }
+        .listTr:not(.rowdata) {
+            background-color: rgba(253, 139, 139, 0.87);
+            padding: 10px 0px;
+            border-radius: 5px;
+        }
+    }
+}

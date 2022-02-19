@@ -1,0 +1,36 @@
+.sideBar {
+    flex: 1;
+    height: calc(100vh - 60px);
+    background-color: rgb(251, 251, 255);
+    position: sticky;
+    top: 50px;
+    .wrapper {
+        padding: 30px 20px;
+        span {
+            color: dimgray;
+            font-weight: 700;
+        }
+        .cate {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            .item {
+                align-items: center;
+                margin: 10px 20px;
+                display: flex;
+                flex-direction: row;
+                border-radius: 10px;
+                padding: 5px 10px;
+                span {
+                    font-weight: 400;
+                    color: black;
+                    margin-left: 10px;
+                }
+            }
+            .item:hover {
+                cursor: pointer;
+                background-color: rgba(242, 220, 255, 0.5);
+            }
+        }
+    }
+}
