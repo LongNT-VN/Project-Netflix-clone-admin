@@ -3,17 +3,14 @@ import './Login.scss'
 import {useContext, useState} from 'react'
 import { AuthContext } from '../../context/authContext/AuthContext';
 import { login } from '../../context/authContext/apiCall';
-import {useNavigate} from 'react-router-dom';
 
 const Login = () => {
-    const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const {isFetching, dispatch} = useContext(AuthContext);
+    const {isFetching, dispatch,error} = useContext(AuthContext);
     const handleClick = (e) => {
         e.preventDefault();
         login({email,password},dispatch);
-        navigate("/",{ replace: true });
     }
     return (
         <div className="login">
@@ -26,7 +23,8 @@ const Login = () => {
                     <input name="email" type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)}/>
                     <input name="password" type="password" placeholder="Password"  onChange={(e) => setPassword(e.target.value)}/>
                     <button className="loginButton" onClick={handleClick} disabled={isFetching}>Sign in</button>
-                    <span>New to netflix? <b>Sign Up now.</b></span>
+                    {error ? <span className="error">Wrong account</span> : <></> }
+                    <span>New to netflix? <b><a href="/register">Sign Up now.</a></b></span>
                     <small>This page is protected by Google reCaptcha to ensure you're not a bot. <b>Learn more</b></small>
                 </form>
             </div>

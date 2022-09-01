@@ -1,21 +1,20 @@
-import axios from 'axios';
-import { loginFailure, loginStart, loginSuccess,logout } from './AuthAction';
+import { axiosInstance } from "../../config.js";
+import { loginFailure, loginStart, loginSuccess, logout } from "./AuthAction";
 
-export const login = async (user,dispatch) => {
-    dispatch(loginStart());
-    try {
-        const res = await axios.post('auth/login',user);
-        res.data.isAdmin && dispatch(loginSuccess(res.data));
-    } catch (error) {
-        dispatch(loginFailure());
-        console.error(error)
-    }
-}
+export const login = async (user, dispatch) => {
+  dispatch(loginStart());
+  try {
+    const res = await axiosInstance.post("auth/login", user);
+    dispatch(loginSuccess(res.data));
+  } catch (error) {
+    dispatch(loginFailure());
+  }
+};
 
 export const logoutfunc = async (dispatch) => {
-    try {
-        dispatch(logout());
-    } catch (error) {
-        console.error(error)
-    }
-}
+  try {
+    dispatch(logout());
+  } catch (error) {
+    console.error(error);
+  }
+};
